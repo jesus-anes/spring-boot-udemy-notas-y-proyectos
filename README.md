@@ -5,10 +5,14 @@ Este repositorio contiene todos los proyectos desarrollados durante el curso de 
 ## 🛠️ Tecnologías
 
 - Java 24
-- Spring Boot 3.5
+- Spring Boot 3
+- Thymeleaf
+- Rest
+- JPA
+- JWT
 - Spring Security
 - MySQL / H2
-- JWT
+- Web Flux
 - Maven
 
 ## ✅ Estado
