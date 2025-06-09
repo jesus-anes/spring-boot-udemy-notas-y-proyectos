@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title th:text="${titulo}"></title>
+</head>
+
+<body>
+	<h1 th:text="${titulo}"></h1>
+
+	<ul>
+		<!--						Enlaces con parametros-->
+
+		<li>
+			<a th:href="@{/variables/string/} + 'Hola Jesus'">/variables/string/Hola Jesus</a>
+		</li>
+		<li>
+			<a th:href="@{/variables/string/} + 'Que tal'">/variables/string/Que tal</a>
+		</li>
+		<li>
+			<a th:href="@{/variables/string/} + 'Hola Jesus' + '/' + 34">/variables/string/Hola Jesus/34</a>
+		</li>
+<!--		de esta forma vendria de variables-->
+		<li>
+			<a th:href="@{/variables/string/} + ${'Hola Jesus'} + '/' + ${'34'}">/variables/string/${Hola
+				Jesus}/${34}</a>
+		</li>
+	</ul>
+
+
+</body>
+
+</html>

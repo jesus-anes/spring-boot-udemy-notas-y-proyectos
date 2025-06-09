@@ -1,0 +1,7 @@
+spring.application.name=spring-boot-data-jpa
+
+spring.datasource.url=jdbc:h2:mem:clientesdb
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=create
+spring.h2.console.enabled=true

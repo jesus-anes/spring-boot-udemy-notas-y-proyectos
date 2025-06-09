@@ -1,0 +1,38 @@
+package com.bolsadeideas.springboot.error.app.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.bolsadeideas.springboot.error.app.models.domain.Usuario;
+
+@Service
+public class UsuarioServiceImpl implements UsuarioService {
+
+	private List<Usuario> lista;
+
+	public UsuarioServiceImpl() {
+		this.lista = new ArrayList<>();
+		lista.add(new Usuario(1, "Jesus", "Anes"));
+		lista.add(new Usuario(2, "Lalo", "Redondo"));
+		lista.add(new Usuario(3, "Lucia", "Martínez"));
+		lista.add(new Usuario(4, "Maria", "Miguel"));
+		lista.add(new Usuario(5, "Isabel", "Lopez"));
+		lista.add(new Usuario(7, "Paco", "Jimenez"));
+		lista.add(new Usuario(8, "Juan", "Burdalo"));
+	}
+
+	@Override
+	public List<Usuario> listar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario obtenerPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

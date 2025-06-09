@@ -1,0 +1,21 @@
+package com.bolsadeideas.springboot.error.app.services;
+
+import java.util.List;
+
+import com.bolsadeideas.springboot.error.app.models.domain.Usuario;
+
+public class UsuarioServiceImpl implements UsuarioService {
+
+	@Override
+	public List<Usuario> listar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario obtenerPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

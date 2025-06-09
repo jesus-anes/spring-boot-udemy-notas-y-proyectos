@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+	<nav th:fragment="paginator">
+
+		<ul>
+			<li>
+				<span th:if="${page.first}">primara</span>
+				<a th:if="${not page.first}" th:thref="@{${page.url}(page=0)}" th:text="${page}">primera</a>
+			</li>
+			<li></li>
+
+			<li></li>
+			<li></li>
+			<li></li>
+
+			<li></li>
+			<li></li>
+		</ul>
+	</nav>
+</body>
+
+</html>

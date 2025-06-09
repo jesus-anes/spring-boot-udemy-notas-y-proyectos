@@ -1,0 +1,2 @@
+spring.application.name=spring-boot-data-jpa
+spring.h2.console.enabled=true

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout:: head"></head>
+
+<body>
+	<header th:replace="layout/layout:: header"></header>
+
+	<main>
+		<div class="container py-4">
+
+			<div class="card bg-dark text-light">
+				<div class="card-header" th:text="${titulo}"></div>
+				<div class="card-body">
+					<form th:action="@{/form}" th:object="${cliente}" method="post" class="container mt-4">
+
+						<div class="mb-3 row g-3 align-items-center">
+							<div class="col-2">
+								<label for="nombre" class="form-label text-light">Nombre</label>
+							</div>
+							<div class="col-auto">
+								<input type="text" th:field="*{nombre}" th:errorclass="'is-invalid'"
+									class="form-control bg-secondary text-light" id="nombre"
+									placeholder="Introduce el nombre">
+								<small class="text-danger" th:if="${#fields.hasErrors('nombre')}"
+									th:errors="*{nombre}"></small>
+							</div>
+						</div>
+
+						<div class="mb-3 row g-3 align-items-center">
+							<div class="col-2">
+								<label for="apellido" class="form-label text-light">Apellido</label>
+							</div>
+							<div class="col-auto">
+								<input type="text" th:field="*{apellido}" th:errorclass="'is-invalid'"
+									class="form-control bg-secondary text-light" id="apellido"
+									placeholder="Introduce el apellido">
+								<small class="text-danger" th:if="${#fields.hasErrors('apellido')}"
+									th:errors="*{apellido}"></small>
+							</div>
+						</div>
+
+						<div class="mb-3 row g-3 align-items-center">
+							<div class="col-2">
+								<label for="email" class="form-label text-light">Email</label>
+							</div>
+							<div class="col-auto">
+								<input type="text" th:field="*{email}" th:errorclass="'is-invalid'"
+									class="form-control bg-secondary text-light" id="email"
+									placeholder="Introduce el email">
+								<small class="text-danger" th:if="${#fields.hasErrors('email')}"
+									th:errors="*{email}"></small>
+							</div>
+						</div>
+
+						<div class="mb-3 row g-3 align-items-center">
+							<div class="col-2">
+								<label for="fecha" class="form-label text-light">Fecha</label>
+							</div>
+							<div class="col-auto">
+								<input type="date" th:field="*{createAt}" th:errorclass="'is-invalid'"
+									class="form-control bg-secondary text-light" id="fecha">
+								<small class="text-danger" th:if="${#fields.hasErrors('createAt')}"
+									th:errors="*{createAt}"></small>
+							</div>
+						</div>
+
+						<button type="submit" class="btn btn-primary btn-sm">Crear Cliente</button>
+					</form>
+				</div>
+			</div>
+
+
+		</div>
+	</main>
+
+	<footer th:replace="layout/layout:: footer"></footer>
+
+</body>
+
+</html>

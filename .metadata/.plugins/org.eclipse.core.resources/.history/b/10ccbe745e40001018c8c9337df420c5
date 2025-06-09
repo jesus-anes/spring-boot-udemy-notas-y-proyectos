@@ -1,0 +1,1 @@
+INSERT INTO clientes(id, nombre, apellido, email, create_at)
