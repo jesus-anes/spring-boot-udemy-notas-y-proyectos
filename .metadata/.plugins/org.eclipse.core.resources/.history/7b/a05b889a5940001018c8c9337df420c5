@@ -1,9 +1,0 @@
-package com.bolsadeideas.springboot.app.models.entity;
-
-import jakarta.persistence.Entity;
-
-//Indicamos que va a ser una entidad
-@Entity
-public class Cliente {
-
-}

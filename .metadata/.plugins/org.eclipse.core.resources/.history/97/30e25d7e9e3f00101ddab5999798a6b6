@@ -1,3 +1,0 @@
-spring.application.name=spring-boot-horario
-config.horario.apertura=14
-config.horario.cierre=18

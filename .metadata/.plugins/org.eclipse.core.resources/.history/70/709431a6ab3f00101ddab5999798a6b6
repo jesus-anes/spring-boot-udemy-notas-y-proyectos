@@ -1,5 +1,0 @@
-package com.bolsadeideas.springboot.error.app.errors;
-
-public class UsuarioNoEncontradoException extends RuntimeException {
-
-}

@@ -1,5 +1,0 @@
-NotEmpty.cliente.nombre=El nombre del cliente es requerido
-NotEmpty.cliente.apellido=El apellido del cliente es requerido
-NotEmpty.cliente.email=El email es requerido
-Email.cliente.email=La dirección de correo no es válida
-NotNull.cliente.createAt=la fechan no puede ser nula

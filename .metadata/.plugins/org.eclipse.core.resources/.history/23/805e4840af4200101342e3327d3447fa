@@ -1,5 +1,0 @@
-package com.bolsadeideas.springboot.app.components;
-
-public class UploadDirectoryInitializer {
-
-}
