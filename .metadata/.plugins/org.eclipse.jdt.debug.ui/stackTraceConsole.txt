@@ -1,7 +1,0 @@
-<div class="mt-4">
-					<h1 class="text-secondary border-dark border-bottom" th:text="${titulo}"></h1>
-				</div>
-
-				<div class="my-3">
-					<a th:href="@{/form}" class="btn btn-primary">Crear Cliente</a>
-				</di

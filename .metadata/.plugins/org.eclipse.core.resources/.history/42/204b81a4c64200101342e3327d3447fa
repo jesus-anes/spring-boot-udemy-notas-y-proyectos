@@ -1,5 +1,0 @@
-package com.bolsadeideas.springboot.app.models.dao.service;
-
-public interface IUploadFileService {
-
-}
