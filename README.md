@@ -1,4 +1,5 @@
 📘 Proyectos y Apuntes del Curso de Spring Boot (Udemy)
+
 Este repositorio recopila los proyectos prácticos desarrollados durante el curso de Spring Boot en Udemy, junto con apuntes personales incluidos directamente en el código, como comentarios en clases o archivos relevantes.
 
 🛠️ Tecnologías utilizadas
