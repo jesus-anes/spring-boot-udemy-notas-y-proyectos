@@ -1,0 +1,22 @@
+package com.bolsadeideas.springboot.app.models.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "productos")
+public class Producto implements Serializable {
+
+	private Long id;
+	private String nombre;
+	private Double precio;
+
+	@Column(name = "create_at")
+	private Date createAt;
+	private static final long serialVersionUID = 1L;
+
+}

@@ -1,0 +1,40 @@
+package com.bolsadeideas.springboot.app.models.entity;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table("facturas_items")
+public class ItemFactura implements Serializable {
+
+	@Id
+	private Long id;
+
+	private Integer catidad;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getCatidad() {
+		return catidad;
+	}
+
+	public void setCatidad(Integer catidad) {
+		this.catidad = catidad;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	private static final long serialVersionUID = 1L;
+
+}

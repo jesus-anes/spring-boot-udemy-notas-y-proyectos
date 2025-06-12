@@ -1,0 +1,21 @@
+package com.bolsadeideas.springboot.app.components;
+
+import java.io.File;
+
+import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+
+@Component
+public class UploadDirectoryInitializer {
+	private final String uploadDir = "C:/Temp/uploads";
+
+	@PostConstruct
+	public void init() {
+		File dir = new File(uploadDir);
+		if (!dir.exists()) {
+			dir.mkdirs(); // Crea todos los directorios necesarios
+			System.out.println("Directorio de uploads creado: " + uploadDir);
+		}
+	}
+}

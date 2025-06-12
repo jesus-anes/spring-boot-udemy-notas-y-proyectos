@@ -27,3 +27,25 @@ INSERT INTO clientes(nombre, apellido, email, create_at, foto) VALUES ('Marta', 
 INSERT INTO clientes(nombre, apellido, email, create_at, foto) VALUES ('Andrés', 'Nieto', 'andres.nieto@gmail.com', '2025-06-24', '');
 INSERT INTO clientes(nombre, apellido, email, create_at, foto) VALUES ('Beatriz', 'León', 'beatriz.leon@gmail.com', '2025-06-25', '');
 
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Panasonic Pantalla LCS', 690, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Samsung Galaxy S21', 799, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Apple iPhone 13', 999, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Sony WH-1000XM4 Auriculares', 349, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Dell XPS 13 Laptop', 1200, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('HP LaserJet Impresora', 150, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Canon EOS Rebel T7 Cámara', 550, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Xiaomi Mi Band 7', 49, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Samsung Smart TV 55"', 680, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Apple AirPods Pro', 249, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Lenovo ThinkPad E15', 890, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Razer DeathAdder V2 Mouse', 69, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Logitech K380 Teclado', 40, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Amazon Echo Dot', 49, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Samsung Galaxy Tab A8', 220, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('GoPro HERO9', 399, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('JBL Flip 5 Altavoz', 119, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Apple Watch SE', 279, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Nintendo Switch OLED', 349, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Asus TUF Gaming Laptop', 1350, NOW());
+INSERT INTO productos(nombre, precio, create_at) VALUES ('Philips Hue Smart Bulb', 29, NOW());
+

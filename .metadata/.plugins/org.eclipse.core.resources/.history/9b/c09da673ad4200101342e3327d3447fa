@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout:: head"></head>
+
+<body>
+	<header th:replace="layout/layout:: header"></header>
+
+	<main>
+		<div class="container py-4">
+
+			<div class="card shadow rounded">
+				<div class="card-header bg-primary text-white text-center fs-4" th:text="${titulo}"></div>
+
+				<div class="card-body">
+
+					<div class="text-center mb-4">
+						<img th:if="${#strings.length(cliente.foto) > 0}" th:src="@{'/uploads/' + ${cliente.foto}}"
+							th:alt="${cliente.foto}" class="img-thumbnail rounded-circle"
+							style="width: 150px; height: 150px; object-fit: cover;" />
+					</div>
+
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							<strong>Nombre: </strong><span th:text="${cliente.nombre}"></span>
+						</li>
+						<li class="list-group-item">
+							<strong>Apellido: </strong><span th:text="${cliente.apellido}"></span>
+						</li>
+						<li class="list-group-item">
+							<strong>Email: </strong><span th:text="${cliente.email}"></span>
+						</li>
+						<li class="list-group-item">
+							<strong>Fecha de creación: </strong><span th:text="${cliente.createAt}"></span>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+	<footer th:replace="layout/layout:: footer"></footer>
+
+</body>
+
+</html>
