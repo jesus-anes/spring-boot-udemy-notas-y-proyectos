@@ -49,3 +49,11 @@ INSERT INTO productos(nombre, precio, create_at) VALUES ('Nintendo Switch OLED',
 INSERT INTO productos(nombre, precio, create_at) VALUES ('Asus TUF Gaming Laptop', 1350, NOW());
 INSERT INTO productos(nombre, precio, create_at) VALUES ('Philips Hue Smart Bulb', 29, NOW());
 
+INSERT INTO facturas(descripcion, observacion, cliente_id, create_at) VALUES ('Factura equipos de oficina', null,1, NOW());
+INSERT INTO facturas_items (cantidad, factura_id, producto_id) VALUES (1,1,1);
+INSERT INTO facturas_items (cantidad, factura_id, producto_id) VALUES (2,1,4);
+INSERT INTO facturas_items (cantidad, factura_id, producto_id) VALUES (1,1,2);
+INSERT INTO facturas_items (cantidad, factura_id, producto_id) VALUES (1,1,6);
+
+INSERT INTO facturas(descripcion, observacion, cliente_id, create_at) VALUES ('Factura Bicileta', 'Alguna nota importante!', 1, NOW());
+INSERT INTO facturas_items (cantidad, factura_id, producto_id) VALUES (2,2,6);

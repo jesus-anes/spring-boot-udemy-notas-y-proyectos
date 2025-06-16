@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout:: head"></head>
+
+<body>
+	<header th:replace="layout/layout:: header"></header>
+
+	<main>
+		<div class="container py-4">
+
+			<h4>
+				<a th:href="@{'/ver/' + ${factura.cliente.id}}"><i class="bi bi-arrow-left"></i></a>
+			</h4>
+
+			<div class="card">
+				<div class="card-header" th:text="${titulo}"></div>
+				<div class="card-body">
+
+					<form th:action="@{/factura/form}" th:object="${factura}" method="post">
+
+						<div class="mb-3 row g-3 align-items-center">
+							<div class="col-2">
+								<label for="nombre" class="form-label">Nombre</label>
+							</div>
+
+							<div class="col-4">
+								<input th:value="${factura.cliente.nombre} + ' ' + ${factura.cliente.apellido}"
+									class="form-control" disabled>
+							</div>
+						</div>
+
+						<div class="mb-3 row g-3 align-items-center">
+							<div class="col-2">
+								<label for="descripcion" class="form-label">Descripción</label>
+							</div>
+
+							<div class="col-4">
+								<input type="text" th:field="*{descripcion}" th:errorclass="'alert-danger'"
+									class="form-control" id="descripcion" placeholder="Introduce la descripción">
+								<small class="text-danger" th:if="${#fields.hasErrors('descripcion')}"
+									th:errors="*{descripcion}"></small>
+							</div>
+						</div>
+
+						<div class="mb-3 row g-3 align-items-center">
+							<div class="col-2">
+								<label for="observacion" class="form-label">Observación</label>
+							</div>
+
+							<div class="col-4">
+								<textarea th:field="*{descripcion}" class="form-control" id="observacion"
+									placeholder="Introduce la observación"></textarea>
+							</div>
+						</div>
+
+						<button type="submit" th:text="${titulo}" class="btn btn-primary btn-sm"></button>
+
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+	<footer th:replace="layout/layout:: footer"></footer>
+
+</body>
+
+</html>
