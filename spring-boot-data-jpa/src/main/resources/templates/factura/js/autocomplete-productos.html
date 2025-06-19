@@ -49,6 +49,7 @@
 			});
 
 			//Eliminamos la pantilla antes de enviar el formulario
+			//Ya que daria un error porque cuenta como una linea más
 			$("form").submit(function () {
 				$("#pantillaItemsFactura").remove();
 				return;

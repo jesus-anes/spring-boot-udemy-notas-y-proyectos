@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +24,8 @@ import com.bolsadeideas.springboot.app.models.entity.Cliente;
 import com.bolsadeideas.springboot.app.models.entity.Factura;
 import com.bolsadeideas.springboot.app.models.entity.ItemFactura;
 import com.bolsadeideas.springboot.app.models.entity.Producto;
+
+import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/factura")
@@ -69,9 +73,25 @@ public class FacturaController {
 
 	// Guardar la factura
 	@PostMapping("/form")
-	public String guardar(Factura factura, @RequestParam(name = "item_id[]", required = false) Long[] itemId,
+	public String guardar(@Valid Factura factura, BindingResult result, Model model,
+			@RequestParam(name = "item_id[]", required = false) Long[] itemId,
 			@RequestParam(name = "cantidad[]", required = false) Integer[] cantidad, RedirectAttributes flash,
 			SessionStatus status) {
+
+		if (result.hasErrors()) {
+
+			model.addAttribute("titulo", "Crear Factura");
+
+			return "factura/form";
+		}
+
+		if (itemId == null || itemId.length == 0) {
+
+			model.addAttribute("titulo", "Crear Factura");
+			model.addAttribute("error", "Error: La factura NO puede no tener líneas!");
+
+			return "factura/form";
+		}
 
 		for (int i = 0; i < itemId.length; i++) {
 			Producto producto = clienteService.findProductoById(itemId[i]);
@@ -89,9 +109,27 @@ public class FacturaController {
 
 			status.setComplete();
 
-			flash.addAttribute("success", "Factura creada con éxito!");
+			flash.addFlashAttribute("success", "Factura creada con éxito!");
 		}
 
 		return "redirect:/ver/" + factura.getCliente().getId();
+	}
+
+	// Vista de los detalles de la factura
+	@GetMapping("/ver/{id}")
+	public String verFactura(@PathVariable(value = "id") Long id, Model model, RedirectAttributes flash) {
+
+		Factura factura = clienteService.findFacturaById(id);
+
+		if (factura == null) {
+			flash.addFlashAttribute("error", "La factura no existe en la base de datos!");
+
+			return "redirect:/listar";
+		}
+
+		model.addAttribute("factura", factura);
+		model.addAttribute("titulo", "Factura: ".concat(factura.getDescripcion()));
+
+		return "factura/ver";
 	}
 }

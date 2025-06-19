@@ -10,16 +10,16 @@
 					<input type="hidden" value="{ID}" name="item_id[]" />
 				</td>
 				<td>{NOMBRE}</td>
-				<td>{PRECIO}</td>
-				<td class="align-middle">
+				<td class="text-center">{PRECIO}</td>
+				<td class="align-middle text-center">
 					<div class="d-inline-block">
 						<input type="number" value="1" min="1" name="cantidad[]" id="cantidad_{ID}"
 							class="form-control form-control-sm text-center" style="max-width: 70px;"
 							onchange="itemsHelper.calcularImporte({ID}, {PRECIO}, this.value);" />
 					</div>
 				</td>
-				<td><span id="total_importe_{ID}">0</span></td>
-				<td>
+				<td class="text-center"><span id="total_importe_{ID}">0</span></td>
+				<td class="text-center">
 					<button type="button" class="btn btn-sm btn-danger"
 						onclick="itemsHelper.eliminarLineaFactura({ID});"><i class="bi bi-trash-fill"></i></button>
 				</td>
