@@ -27,4 +27,12 @@ public interface IClienteService {
 	public Producto findProductoById(Long id);
 
 	public Factura findFacturaById(Long id);
+
+	public void deleteFactura(Long id);
+
+	// Consulta para optimizar que se encuentra en la clase IFacturaDao
+	public Factura fetchByIdWithClienteWithItemFacturaWithProducto(Long id);
+
+	// Consulta para optimizar que se encuentra en la clase IClienteDao
+	public Cliente fetchByIdWithFactura(Long id);
 }

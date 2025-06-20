@@ -50,7 +50,7 @@ public class ClienteController {
 	@Autowired
 	private IUploadFileService uploadFileService;
 
-	// :.+ Explresión regular para la extensión de la imagen
+	// :.+ Expresión regular para la extensión de la imagen
 	@GetMapping("/uploads/{filename:.+}")
 	public ResponseEntity<Resource> verFoto(@PathVariable String filename) {
 
@@ -71,7 +71,10 @@ public class ClienteController {
 	@GetMapping("/ver/{id}")
 	public String ver(@PathVariable(value = "id") Long id, Model model, RedirectAttributes flash) {
 
-		Cliente cliente = clienteService.findOne(id);
+		// Cliente cliente = clienteService.findOne(id);
+
+		// Consulta optimizada
+		Cliente cliente = clienteService.fetchByIdWithFactura(id);
 
 		if (cliente == null) {
 			flash.addFlashAttribute("error", "El cliente no existe en la base de datos");
@@ -85,7 +88,7 @@ public class ClienteController {
 	}
 
 	// Lo mismo que @GetMapping
-	@GetMapping("/listar")
+	@GetMapping({ "/listar", "/" })
 	public String listar(@RequestParam(name = "page", defaultValue = "0") int page, Model model) {
 
 		// Para la paginacion

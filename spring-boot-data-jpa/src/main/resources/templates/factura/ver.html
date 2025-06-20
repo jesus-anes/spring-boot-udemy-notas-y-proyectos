@@ -4,7 +4,7 @@
 <head th:replace="layout/layout:: head"></head>
 
 <body>
-	<header th:replace="layout/layout:: header"></header>
+	<header th:replace="~{layout/layout::header}"></header>
 
 	<main>
 		<div class="container py-4">
@@ -87,8 +87,8 @@
 		</div>
 	</main>
 
-	<footer th:replace="layout/layout:: footer"></footer>
-	<script th:replace="factura/js/autocomplete-productos :: javascript"></script>
+	<footer th:replace="~{layout/layout:: footer}"></footer>
+	<script th:replace="~{factura/js/autocomplete-productos :: javascript}"></script>
 
 </body>
 

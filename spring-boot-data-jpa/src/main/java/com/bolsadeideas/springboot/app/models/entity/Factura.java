@@ -46,7 +46,7 @@ public class Factura implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Cliente cliente;
 
-	// orphanRemoval eliminas registros huerfanos que bno esten asociados a ningún
+	// orphanRemoval eliminas registros huerfanos que no estén asociados a ningún
 	// cliente
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	// Generamos la llave foránea factura_id en la tabla facturas_items

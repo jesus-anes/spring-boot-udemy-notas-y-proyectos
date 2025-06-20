@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout:: head"></head>
+
+<body>
+	<header th:replace="~{layout/layout:: header}"></header>
+
+	<main>
+		<div class="container py-5">
+			<div class="row align-items-center">
+				<div class="col-md-2 text-center text-danger">
+					<i class="bi bi-exclamation-triangle-fill fs-1" aria-hidden="true"></i>
+					<p class="mt-2 fw-bold">Error 403</p>
+				</div>
+
+				<div class="col-md-10">
+					<h2 class="text-danger">¡Acceso denegado!</h2>
+					<p class="lead">Tu acceso ha sido rechazado por razones de seguridad del servidor y por la
+						protección de datos sensibles.</p>
+					<p>Si crees que esto es un error, contacta con el administrador. Si no, puedes volver al inicio para
+						seguir navegando.</p>
+					<a class="btn btn-outline-danger mt-3" th:href="@{/listar}">Volver al inicio</a>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer th:replace="~{layout/layout:: footer}"></footer>
+</body>
+
+</html>

@@ -62,7 +62,7 @@ public class Cliente implements Serializable {
 
 	// Relacion con Factura
 	// LAZY, no trae todas las relaciones
-	// orphanRemoval eliminas registros huerfanos que no esten asociados a
+	// orphanRemoval elimina registros huerfanos que no estén asociados a
 	// ningún cliente
 	@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Factura> facturas;
