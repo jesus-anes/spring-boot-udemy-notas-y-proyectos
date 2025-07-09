@@ -36,7 +36,7 @@
 						</li>
 
 						<!-- Dropdown visible solo si está autenticado -->
-						<li class="nav-item dropdown" sec:authorize="isAuthenticated()">
+						<li class="nav-item dropdown me-3" sec:authorize="isAuthenticated()">
 							<a class="btn btn-primary dropdown-toggle" href="#" id="userDropdown" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false">
 								<span sec:authentication="name"></span>
@@ -57,6 +57,21 @@
 											onclick="document.getElementById('logoutForm').submit();">Sing Out</button>
 									</form>
 								</li>
+							</ul>
+						</li>
+
+						<!-- Selector de idioma -->
+						<li class="nav-item dropdown mt-2 mt-lg-0">
+							<a class="btn btn-outline-secondary dropdown-toggle" href="#" id="langDropdown"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<span th:text="#{text.locale.language}"></span> </a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+								<li><a class="dropdown-item" th:href="@{/locale(lang=es_ES)}"
+										th:text="#{text.locale.es}">Español</a></li>
+								<li><a class="dropdown-item" th:href="@{/locale(lang=en_US)}"
+										th:text="#{text.locale.en}">English</a></li>
+								<li><a class="dropdown-item" th:href="@{/locale(lang=de_De)}"
+										th:text="#{text.locale.de}">Deutsch</a></li>
 							</ul>
 						</li>
 

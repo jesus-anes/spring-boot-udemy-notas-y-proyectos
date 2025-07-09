@@ -61,7 +61,7 @@ public class SpringSecurityConfig {
 
 		// Acceso público
 		http.authorizeHttpRequests(
-				(authz) -> authz.requestMatchers("/", "/css/**", "/js/**", "/images/**", "/listar").permitAll()
+				(authz) -> authz.requestMatchers("/", "/css/**", "/js/**", "/images/**", "/listar", "/locale").permitAll()
 						// Acceso de usuarios
 						// .requestMatchers("/ver/**", "/uploads/**").hasAnyRole("USER")
 						// Acceso de admin
